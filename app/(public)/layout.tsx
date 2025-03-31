@@ -7,14 +7,16 @@ export default function PublicLayout({
     children: React.ReactNode;
   }>) {
     return (
-     <>
+     
+        <main className="flex flex-col w-full h-full">
         <NavMenu/>
-     <main className="">
+     <div className="flex flex-col  overflow-x-hidden bg-green-950">
         {children}
-     </main>
-     <footer>
+        </div>
         <Footer/>
-     </footer>
-     </>
+     </main>
+     
+     
+     
     );
   }

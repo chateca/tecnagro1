@@ -1,7 +1,9 @@
+import Banner from "@/components/Banner";
+
  export default function Home() {
   return (
-    <section>
-      <div>Hello world!</div>
+    <section  className="flex flex-col w-full scroll-section ">
+      <Banner/>
     </section>
   );
 }
