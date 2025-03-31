@@ -1,1 +1,155 @@
 @import "tailwindcss";
+
+@theme{
+    --text-xs: .75rem;
+    --text-sm: .875rem;
+    --text-base: 1rem;
+    --text-lg: 1.125rem;
+    --text-xl: 1.25rem;
+    --text-2xl: 1.5rem;
+    --text-3xl: 1.875rem;
+    --text-4xl: 2.25rem;
+    --text-5xl: 3rem;
+    --text-6xl: 4rem;
+    --text-7xl: 5rem;
+    --text-8xl: 6rem;
+
+    /*colors*/
+   --color-white:#fff;
+   --color-green-1:#13A538;
+   --color-green-2:#6FD904;
+   --color-green-3:#00533E;
+   --color-black-3:#00214F;
+   --color-black-2:#344054;
+   --color-black-3:#1D1D1B;
+
+
+
+   /*animation */
+
+   --animate-mediaAnimation: 3s linear infinite;
+   --animate-showContent:  .5s .7s ease-in-out 1 forwards;
+     
+     @keyframes mediaAnimation {
+         50% { transform: translateY(-1rem) }
+       } ;
+       
+       @keyframes showContent {
+           to { transform: "translateY(0)"; 
+               opacity: 1;
+               filter: "blur(0)" }
+           }
+
+}
+
+
+
+
+
+
+
+
+@layer components{
+
+
+    .swiper{
+     @apply w-[100%] h-[100%]
+    }
+  
+    .swiper-slide{
+  @apply flex justify-center items-center
+    }
+  
+  /*nav style*/
+    .nav-link{
+      @apply text-sm duration-300 text-white
+    }  
+    .nav-link:hover{
+      @apply text-green-2
+    }
+  
+    .activeLink{
+      @apply text-green-2 
+    }
+  
+   /*slide style*/
+    .slider .list .item{
+      @apply absolute inset-0 overflow-hidden opacity-0 transition duration-75
+    }
+  
+    .slider .list .item{
+      @apply after:content-[''] after:w-[100%] after:h-[100%] after:absolute after:left-0 after:bottom-0 
+    }
+  
+    .slider .list .item.ative{
+      @apply opacity-100 z-10 
+    }
+  
+  
+    .slider .list .item .content{
+      @apply absolute left-[10%] top-[20%] w-[500px] max-w-[80%] z-10
+    }
+  
+    .slider .list .item.ative p:nth-child(1), 
+    .slider .list .item.ative h2,
+    .slider .list .item.ative p:nth-child(3){
+      @apply transition translate-y-8 blur-lg opacity-0 animate-showContent
+    }
+  
+    .slider .list .item.ative h2{
+     @apply transition delay-75
+    }
+    .slider .list .item.ative p:nth-child(3){
+      @apply transition duration-100
+    }
+  
+    .setas{
+      @apply absolute top-[50%] right-[50px] z-20
+    }
+  
+    .setas button{
+    @apply bg-green-1 border-none font-mono w-[40px] h-[40px] rounded-full text-white font-black text-[14px] transition duration-75 hover:text-black-3 hover:bg-white/30
+  
+  }
+  
+  
+  
+  
+  span{
+    @apply text-white text-xs md:text-sm xl:text-base 
+  }
+  
+  
+  .titulo{
+    @apply font-sans text-green-2 font-extrabold lg:text-6xl md:text-4xl text-3xl
+  }
+  
+  /*button style*/
+  
+  .btn{
+   @apply border border-green-2 bg-green-2 rounded-md px-5 py-2 duration-300
+  }
+  
+  .btn span{
+    @apply font-bold text-sm font-mono gap-2
+   }
+  
+   .btn:hover{
+    @apply opacity-90
+   }
+  
+   .btn_outline{
+    @apply bg-transparent
+   }
+  
+   .btn_outline:hover{
+    @apply bg-green-2
+   }
+  
+   /*media social*/
+   .mediaSocial{
+    @apply  flex mt-3 p-4 justify-between items-center rounded-3xl flex-row bg-white md:max-w-[30%] w-[40%] h-10 space-y-2 z-30
+   }
+  }
+  
+
